@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
 import pandas as pd
 import os
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 app = Flask(__name__)
 
@@ -35,22 +37,51 @@ def upload_file():
     df.drop_duplicates(inplace=True)
     df.fillna("Missing", inplace=True)
 
-    # Summary
-    summary = df.describe().to_html()
+    # Select numeric columns
+    numeric_df = df.select_dtypes(include=['int64', 'float64'])
 
-    # First 5 rows
+    # ------------------ GRAPHS ------------------
+
+    # Histogram
+    if not numeric_df.empty:
+        numeric_df.hist(figsize=(8,6))
+        plt.tight_layout()
+        plt.savefig('static/graphs/histogram.png')
+        plt.clf()
+
+    # Bar chart (first column)
+    if not numeric_df.empty:
+        numeric_df.iloc[:,0].value_counts().plot(kind='bar')
+        plt.title("Bar Chart")
+        plt.savefig('static/graphs/bar.png')
+        plt.clf()
+
+    # Heatmap
+    if not numeric_df.empty:
+        sns.heatmap(numeric_df.corr(), annot=True)
+        plt.savefig('static/graphs/heatmap.png')
+        plt.clf()
+
+    # -------------------------------------------
+
+    # Summary + preview
+    summary = df.describe().to_html()
     data = df.head().to_html()
 
     return f"""
     <h2>File Uploaded Successfully!</h2>
+
     <h3>First 5 Rows:</h3>
     {data}
-    <h3>Summary Statistics:</h3>
+
+    <h3>Summary:</h3>
     {summary}
+
+    <h3>Graphs:</h3>
+    <img src="/static/graphs/histogram.png" width="400">
+    <img src="/static/graphs/bar.png" width="400">
+    <img src="/static/graphs/heatmap.png" width="400">
     """
 
 if __name__ == '__main__':
     app.run(debug=True)
-git add .
-git commit -m "Added data cleaning and summary"
-git push
