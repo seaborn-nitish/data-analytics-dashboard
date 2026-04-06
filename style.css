@@ -1,0 +1,115 @@
+/* Reset default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Body */
+body {
+    background: #f4f6f9;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background: #2c3e50;
+    padding: 15px 30px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+/* Card (used in both pages) */
+.card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* Headings */
+h1, h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+/* Upload Form */
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* File Input */
+input[type="file"] {
+    padding: 10px;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    background: #fafafa;
+    cursor: pointer;
+}
+
+/* Buttons */
+button {
+    padding: 12px;
+    background: #3498db;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+/* Dashboard Grid */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Chart Images */
+.chart img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+table th {
+    background: #3498db;
+    color: #fff;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    color: #777;
+}

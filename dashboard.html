@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">📊 Data Analytics Dashboard</div>
+
+<div class="container">
+
+    <!-- Data Preview -->
+    <div class="card">
+        <h2>Data Preview</h2>
+        <div>
+            {{ tables|safe }}
+        </div>
+    </div>
+
+    <!-- Summary Statistics -->
+    <div class="card">
+        <h2>Summary Statistics</h2>
+        <div>
+            {{ summary|safe }}
+        </div>
+    </div>
+
+    <!-- Graphs Section -->
+    <div class="card">
+        <h2>Graphs</h2>
+
+        <div class="dashboard">
+
+            <div class="chart">
+                <h3>Histogram</h3>
+                <img src="{{ url_for('static', filename='graphs/histogram.png') }}">
+            </div>
+
+            <div class="chart">
+                <h3>Bar Chart</h3>
+                <img src="{{ url_for('static', filename='graphs/bar.png') }}">
+            </div>
+
+            <div class="chart">
+                <h3>Heatmap</h3>
+                <img src="{{ url_for('static', filename='graphs/heatmap.png') }}">
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    Made with Flask & ❤️
+</div>
+
+</body>
+</html>

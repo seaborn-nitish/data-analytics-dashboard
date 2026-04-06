@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Analytics Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">📊 Data Analytics Dashboard</div>
+
+<div class="container">
+
+    <!-- Intro Section -->
+    <div class="card">
+        <h1>Welcome</h1>
+        <p>A Web Application for Data Analysis & Visualization</p>
+    </div>
+
+    <!-- Upload Section -->
+    <div class="card">
+        <h2>Upload CSV Dataset</h2>
+
+        <form class="upload-form" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+
+    <!-- Features Section -->
+    <div class="dashboard">
+
+        <div class="card">
+            <h3>Automatic Data Cleaning</h3>
+            <p>Removes missing values and duplicates automatically.</p>
+        </div>
+
+        <div class="card">
+            <h3>Statistical Summary</h3>
+            <p>Mean, Median, Standard Deviation and other metrics.</p>
+        </div>
+
+        <div class="card">
+            <h3>Data Visualization</h3>
+            <p>Graphs and charts generated from your dataset.</p>
+        </div>
+
+        <div class="card">
+            <h3>Insights</h3>
+            <p>Get meaningful insights and patterns from data.</p>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    Made with Flask & ❤️
+</div>
+
+</body>
+</html>
