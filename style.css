@@ -113,3 +113,55 @@ table th {
     margin-top: 30px;
     color: #777;
 }
+/* Features List */
+.features-list {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.features-list li {
+    margin-bottom: 8px;
+}
+/* Table scroll */
+.table-container {
+    overflow-x: auto;
+    margin-top: 10px;
+}
+
+/* Better chart look */
+.chart {
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.chart:hover {
+    transform: scale(1.03);
+}
+
+/* Images */
+.chart img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Small stat cards */
+.dashboard .card {
+    text-align: center;
+}
+/*sucess message styling*/
+.navbar_success {
+    text-align: center;
+    padding: 15px 30px;
+    color: #550a0a;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+/* Welcome card */
+.card_welcome {
+    color: #1a0909;
+    padding: 40px;
+    text-align: center;
+}
