@@ -62,11 +62,15 @@ def index():
 
             summary = df.describe().to_html()
             data = df.head().to_html()
+            rows = df.shape[0]
+            cols = df.shape[1]
 
             return render_template(
                 'dashboard.html',
                 tables=data,
-                summary=summary
+                summary=summary,
+                rows=rows,
+                cols=cols
             )
 
     return render_template('index.html')
