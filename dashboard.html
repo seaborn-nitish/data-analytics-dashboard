@@ -6,30 +6,52 @@
 </head>
 <body>
 
-<!-- Navbar -->
 <div class="navbar">📊 Data Analytics Dashboard</div>
+<div class="navbar_success">
+    Dashboard Generated Successfully 🚀
+</div>
 
 <div class="container">
 
+    <!-- Summary Cards -->
+    <div class="dashboard">
+
+        <div class="card">
+            <h3>Total Rows</h3>
+            <p>{{ rows }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Columns</h3>
+            <p>{{ cols }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Status</h3>
+            <p>✅ Data Processed</p>
+        </div>
+
+    </div>
+
     <!-- Data Preview -->
     <div class="card">
-        <h2>Data Preview</h2>
-        <div>
+        <h2>📄 Data Preview</h2>
+        <div class="table-container">
             {{ tables|safe }}
         </div>
     </div>
 
-    <!-- Summary Statistics -->
+    <!-- Summary -->
     <div class="card">
-        <h2>Summary Statistics</h2>
-        <div>
+        <h2>📊 Statistical Summary</h2>
+        <div class="table-container">
             {{ summary|safe }}
         </div>
     </div>
 
-    <!-- Graphs Section -->
+    <!-- Graphs -->
     <div class="card">
-        <h2>Graphs</h2>
+        <h2>📈 Visualizations</h2>
 
         <div class="dashboard">
 
@@ -53,10 +75,7 @@
 
 </div>
 
-<!-- Footer -->
-<div class="footer">
-    Made with Flask & ❤️
-</div>
+
 
 </body>
 </html>
